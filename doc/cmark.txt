@@ -1,0 +1,112 @@
+*cmark.txt*  My own personal syntax
+
+HEADERS                                          *cmark-headers*
+
+Headers start with a `=`.
+The `=` must be followed by a space.
+There are 6 layers of headers, same as HTML.
+>
+ = Level 1
+ == Level 2
+ === Level 3
+ ==== Level 4
+ ===== Level 5
+ ====== Level 6
+<
+
+LISTS                                            *cmark-lists*
+
+Unordered Lists~
+
+Unordered lists begin with a `-`.
+Sublists are also possible.
+>
+ - Item
+ 	- Sub-Item
+		- Sub-Sub-Item
+	- Sub-Item
+ - Item
+<
+
+Ordered Lists~
+
+Ordered lists begin with a `+`.
+Sublists are also possible.
+>
+ + Item
+ 	+ Sub-Item
+		+ Sub-Sub-Item
+	+ Sub-Item
+ + Item
+<
+
+INLINE MARKUP                                    *cmark-inline-markup*
+
+The following rules count for all inline markup:
+1. The begin delimiter must not be followed by a whitespace.
+2. The end delimiter must not follow a whitespace.
+3. To include a delimeter character it must be escaped with \.
+
+Bold~
+
+Begins with `*` and ends with `*`.
+>
+ *This is bold*
+ * This is not *
+<
+
+Italic~
+
+Begins with `_` and ends with `_`.
+>
+ _This is italic_
+ _ This is not _
+<
+
+Bold-Italic~
+
+Begins with `*_` and ends with `_*`.
+>
+ *_This is bold-italic_*
+ *_ This is not _*
+ _* This is also not *_
+<
+
+Code~
+
+Begins with `{` and ends with `}`.
+>
+ {valid}
+ { not valid }
+<
+
+PREFORMATTED BLOCKS                              *cmark-pre*
+
+Begins with `{{{` on its own line and ends with `}}}` on its own line.
+>
+ {{{
+  This is
+     pre-
+	     formatted
+	*not bold* _not italic_
+ }}}
+<
+
+KEYWORDS                                         *cmark-keywords*
+
+The format is `KEYWORD:` followed by a space then the rest of the text.
+>
+ NOTE: This is a note.
+ TODO: This is a todo.
+ WARN: This is a warning.
+<
+
+COMMENTS                                         *cmark-comments*
+
+Comments begin with a `#` and continue to the end of the line.
+>
+ # This is a comment.
+ Some text here. # This is also a comment.
+<
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
