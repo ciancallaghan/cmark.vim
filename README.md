@@ -1,4 +1,4 @@
-# Vim
+# cmark.vim
 
 The included vim syntax file adds appropriate highlighting for cmark.  
 Files ending with `.cm` are automatically set to the filetype `cmark`.
